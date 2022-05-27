@@ -1,0 +1,60 @@
+//console.log( window.location.hash);
+
+var hash = window.location.hash
+
+if (hash) {
+    var newStr = hash.substr(1, hash.length);
+
+
+    var initId = $('[data-id="'+ newStr +'"]');
+
+    var title = initId.attr('data-title');
+    $('#content iframe').attr('src', './' + newStr +'/index.html');
+    $('.trigger').removeClass('current');
+    initId.addClass('current');
+    $('#current-title').html(title);
+}
+
+$('.trigger').click(function(){
+    var id = $(this).attr('data-id');
+    var title = $(this).attr('data-title');
+    var data_color = $(this).attr('data-color');
+    $('#current-title').html(title);
+    $('#content iframe').attr('src', './' + id +'/index.html');
+    // $('#current-title').attr('style', data_color);
+    $('.trigger').removeClass('current');
+    $(this).addClass('current');
+});
+
+$('.next').click(function(){
+    if($('.current').is(':last-child'))
+    {
+        $('.next').addClass('disabled');
+    } else {
+        var id = $('.current').next('li').attr('data-id');
+        var title = $('.current').next('li').attr('data-title');
+        var data_color = $('.current').next('li').attr('data-color');
+        $('#current-title').html(title);
+        $('#content iframe').attr('src', './' + id +'/index.html');
+        $('#current-title').attr('style', data_color);
+        $('.current').removeClass('current').next('li').addClass('current');
+        $('.next').removeClass('disabled');
+    }
+});
+
+
+$('.prev').click(function(){
+    if($('.current').is(':first-child'))
+    {
+        $('.prev').addClass('disabled');
+    } else {
+        var id = $('.current').prev('li').attr('data-id');
+        var title = $('.current').prev('li').attr('data-title');
+        var data_color = $('.current').prev('li').attr('data-color');
+        $('#current-title').html(title);
+        $('#content iframe').attr('src', './' + id +'/index.html');
+        $('#current-title').attr('style', data_color);
+        $('.current').removeClass('current').prev('li').addClass('current');
+        $('.prev').removeClass('disabled');
+    }
+});
