@@ -32,7 +32,7 @@ class THREEScene {
 
       this.renderer.setSize(this.viewport.width, this.viewport.height);
       this.renderer.setPixelRatio = window.devicePixelRatio;
-      this.renderer.setClearColor(0xffffff, 1);
+      this.renderer.setClearColor(0x020024, 1);
       this.container.appendChild(this.renderer.domElement);
     }
 
