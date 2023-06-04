@@ -1,24 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
-
 * {
-	margin: 0;
-	padding: 0;
-}
-body {
-	overflow: hidden;
-}
-canvas {
-	display: block;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-span{
-	position: absolute;
-	left: 50%;
-	bottom: 10px;
-	transform: translate(-50%, -50%);
-	font-family: 'Montserrat', sans-serif;
-	color: #fff;
-	mix-blend-mode: difference;
-	user-select: none;
-	pointer-events: none;
+body {
+  height: 100vh;
+  width: 100%;
+}
+
+canvas {
+  position: relative;
+  width: 100%;
+  height: 100%;
 }
