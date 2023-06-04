@@ -1,17 +1,16 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css?family=Courgette");
 body {
   margin: 0;
   overflow: hidden;
   width: 100%;
-   background: #882588;
+   background: rgb(136, 37, 136);
 }
 
 canvas {
   position: absolute;
   top: 0;
   left: 0;
+  background: radial-gradient(circle, darkslateblue, mediumturquoise) !important;
   width: 100%;
   height: 100%;
-}
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */

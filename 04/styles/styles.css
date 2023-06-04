@@ -1,0 +1,90 @@
+body {
+  background-color: #1c1c1c;
+}
+
+h4,
+h5 {
+  font-family: Courier;
+  color: #c4a000;
+}
+
+h5 {
+  margin-top: -15px;
+}
+
+#orbits {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+#sun {
+  stroke: #666;
+  fill: #c4a000;
+}
+
+.tool {
+  height: auto;
+  width: 11em;
+  background-color: #1f414d;
+  color: #eddb0e;
+  padding: 10px;
+  font-family: Courier;
+  font-weight: 400;
+  border: double 3px #de4a00;
+  cursor: default;
+}
+
+.orbit {
+  fill: none;
+  stroke-dasharray: 2.5;
+  opacity: 0.5;
+}
+
+.moon {
+  stroke: #00a0c4;
+  fill: #00a0c4;
+}
+
+.moon:hover {
+  stroke: #78ba27;
+  stroke-width: 2px;
+  fill: #0eedcf;
+}
+
+.planet {
+  stroke: #78ba27;
+  fill: #78ba27;
+  z-index: 95;
+}
+
+.planet:hover {
+  stroke: #c4a000;
+  stroke-width: 3px;
+  fill: #de4a00;
+}
+
+footer {
+  color: #c4a000;
+  text-transform: uppercase;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  font-size: 70%;
+  width: 13em;
+}
+
+a {
+  color: #c4a000;
+}
+
+.p_line {
+  stroke: #c4a000;
+  stroke-width: 1px;
+}
+
+.m_line {
+  stroke: #78ba27;
+  stroke-width: 1px;
+}/*# sourceMappingURL=styles.css.map */

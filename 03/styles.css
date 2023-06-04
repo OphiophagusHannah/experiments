@@ -1,0 +1,292 @@
+@import url("https://fonts.googleapis.com/css?family=Annie+Use+Your+Telescope|La+Belle+Aurore|Meddon|Reenie+Beanie|Satisfy|Zeyada");
+/*
+font-family: 'Satisfy', cursive;
+font-family: 'Reenie Beanie', cursive;
+font-family: 'Zeyada', cursive;
+font-family: 'Annie Use Your Telescope', cursive;
+font-family: 'La Belle Aurore', cursive;
+font-family: 'Meddon', cursive;*/
+.scrolls {
+  font-family: "Meddon", cursive;
+}
+
+body {
+  height: 7000px;
+  background: linear-gradient(to bottom, rgb(255, 153, 0), rgb(204, 204, 0));
+}
+
+header {
+  position: fixed;
+  width: 9em;
+  height: 3em;
+}
+
+h4 {
+  text-align: center;
+  margin-top: 0.5em;
+  width: 9em;
+  text-transform: uppercase;
+  letter-spacing: 1em;
+  font-weight: 200;
+  border-bottom: double 3px black;
+}
+
+svg {
+  position: fixed;
+  top: 5vw;
+  width: 80vw;
+  margin-left: 5vw;
+}
+
+footer {
+  text-transform: uppercase;
+  position: fixed;
+  bottom: 0;
+  font-size: 70%;
+  width: 13em;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+footer ul {
+  list-style-type: none;
+  text-align: right;
+}
+
+footer a {
+  color: black;
+}
+
+#copyright {
+  text-align: right;
+}
+
+path {
+  transition: stroke 1.5s 0.5s linear;
+}
+
+.clock path,
+.clock circle,
+.clock line {
+  fill: none;
+  fill-opacity: 0;
+  stroke: #8f2800;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: dash 13s 10s forwards;
+  cursor: pointer;
+}
+
+.sign path {
+  fill: none;
+  stroke: #8f2800;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: dashee 20s 70s forwards;
+}
+
+.tree path {
+  fill: none;
+  stroke: #8f2800;
+  stroke-dasharray: 3000;
+  stroke-dashoffset: 3000;
+  stroke-width: 0.8;
+}
+
+.cups path {
+  fill: none;
+  stroke: #8f2800;
+  stroke-dasharray: 3000;
+  stroke-dashoffset: 3000;
+  stroke-width: 1.2;
+  /*animation: cups 20s 60s  forwards;*/
+}
+
+.newb path {
+  fill: none;
+  stroke: #8f2800;
+  stroke-dasharray: 3000;
+  stroke-dashoffset: 3000;
+  stroke-width: 1.2;
+  /*//animation: some 10s 1s forwards;*/
+}
+
+.new path {
+  fill: none;
+  stroke: #8f2800;
+  stroke-width: 1.2;
+  animation: some 35s -11s forwards;
+}
+
+path.b2 {
+  /*    stroke-dasharray: 3000;
+      stroke-dashoffset: 3000;*/
+}
+
+.sides path {
+  fill: none;
+  stroke: #8f2800;
+  stroke-dasharray: 0;
+  stroke-dashoffset: 0;
+  stroke-width: 1.2;
+  animation: dashs 20s 60s forwards;
+}
+
+div.clicks,
+.clocks {
+  font-family: "Reenie Beanie", cursive;
+  position: fixed;
+  bottom: 1em;
+  left: 35vw;
+  opacity: 0;
+  color: #8f2800;
+  transition: 2s;
+}
+
+path.checks,
+path.cupss {
+  opacity: 0;
+  fill: none;
+  stroke: #8f2800;
+  stroke-width: 1.2;
+  height: 70%;
+  transition: 2s;
+}
+
+.scrolls {
+  position: fixed;
+  bottom: 1em;
+  left: 40vw;
+  opacity: 0;
+  color: #8f2800;
+  transition: 2s;
+}
+
+@keyframes scro {
+  to {
+    fill: none;
+    stroke: #8f2800;
+    stroke-width: 0.8;
+    stroke-dasharray: 0;
+    stroke-dashoffset: 0;
+  }
+}
+.press path {
+  fill: none;
+  stroke: #8f2800;
+  stroke-dasharray: 3000;
+  stroke-dashoffset: 3000;
+  stroke-width: 0.7;
+  animation: dashs 10s 30s forwards;
+}
+
+path.st0 {
+  animation: dashs 37s 7s forwards;
+}
+
+path.st1 {
+  animation: dashs 37s 8s forwards;
+}
+
+path.st2 {
+  animation: dashs 37s 9s forwards;
+}
+
+path.st3 {
+  animation: dashs 37s 10s forwards;
+}
+
+path.st4 {
+  animation: dashs 37s 11s forwards;
+}
+
+path.st5 {
+  animation: dashs 37s 12s forwards;
+}
+
+path.st6 {
+  animation: dashs 37s 13s forwards;
+}
+
+path.st7 {
+  animation: dashs 37s 14s forwards;
+}
+
+path.st8 {
+  animation: dashs 37s 15s forwards;
+}
+
+path.st9 {
+  animation: dashs 37s 16s forwards;
+}
+
+path.st10 {
+  animation: dashs 37s 17s forwards;
+}
+
+path.st11 {
+  animation: dashs 37s 18s forwards;
+}
+
+path.st12 {
+  animation: dashs 37s 19s forwards;
+}
+
+path.st13 {
+  animation: dashs 37s 20s forwards;
+}
+
+@keyframes some {
+  to {
+    stroke-width: 1.2;
+    stroke-dasharray: 0;
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes cups {
+  to {
+    stroke-width: 1.2;
+    stroke-dasharray: 0;
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes dashs {
+  to {
+    stroke-dashoffset: 0;
+    stroke-width: 1.2;
+  }
+}
+@keyframes dashee {
+  to {
+    stroke-dashoffset: 0;
+    stroke-width: 0.8;
+  }
+}
+@keyframes dash {
+  to {
+    fill-transition: 2s ease;
+    fill: #f5c731;
+    fill-opacity: 0;
+    stroke-dashoffset: 0;
+    stroke-width: 1;
+  }
+}
+.info {
+  background-color: white;
+  border: 3px double brown;
+  opacity: 0.85;
+}
+
+.colorrange {
+  bottom: 10%;
+  opacity: 0;
+  left: 45%;
+  position: fixed;
+  transition: 2s;
+}
+
+.st4 {
+  fill: none;
+  stroke: #9b042b;
+  stroke-miterlimit: 10;
+}/*# sourceMappingURL=styles.css.map */
