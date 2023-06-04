@@ -1,16 +1,24 @@
-@import url('https://fonts.googleapis.com/css?family=Courgette');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 
-body{
-  margin:0;
-  overflow:hidden;
-  width:100%;
-  background:rgb(136, 37, 136);
+* {
+	margin: 0;
+	padding: 0;
 }
-canvas{
-  position:absolute;
-  top:0;
-  left:0;
+body {
+	overflow: hidden;
+}
+canvas {
+	display: block;
+}
 
-  width: 100%;
-  height: 100%;
+span{
+	position: absolute;
+	left: 50%;
+	bottom: 10px;
+	transform: translate(-50%, -50%);
+	font-family: 'Montserrat', sans-serif;
+	color: #fff;
+	mix-blend-mode: difference;
+	user-select: none;
+	pointer-events: none;
 }
