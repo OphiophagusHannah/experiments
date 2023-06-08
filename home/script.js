@@ -15,7 +15,7 @@ window.addEventListener('mousemove', (event) => {
     mousePos = { x: event.clientX, y: event.clientY };
     // mousePosText.textContent = `(${mousePos.x}, ${mousePos.y})`;
 
-    var grid = prev(parseInt(mousePos.y, 10), innerWidth / innerHeight);
+    var grid = prev(parseInt(mousePos.y, 20), innerWidth / innerHeight);
     svg.innerHTML = '';
     svg.setAttribute('viewBox', `0 0 ${grid[0]} ${grid[1]}`);
 
