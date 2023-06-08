@@ -1,37 +1,24 @@
 <!doctype html>
-
 <html lang="en">
-
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
         <title>A Basic HTML5 Template</title>
         <meta name="description" content="A simple HTML5 Template for new projects.">
         <meta name="author" content="SitePoint">
-
         <meta property="og:title" content="A Basic HTML5 Template">
         <meta property="og:type" content="website">
         <meta property="og:url" content="https://www.sitepoint.com/a-basic-html5-template/">
         <meta property="og:description" content="A simple HTML5 Template for new projects.">
         <meta property="og:image" content="image.png">
-
         <link rel="icon" href="/favicon.ico">
         <link rel="icon" href="/favicon.svg" type="image/svg+xml">
         <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-        <script
-        src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-        crossorigin="anonymous"></script>
-
-
-
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="styles/style.css">
-
     </head>
-
     <body>
-      <script type="x-shader/x-fragment" id="fragment">
+        <script type="x-shader/x-fragment" id="fragment">
     varying vec2 vUv;
     uniform float u_time;
     uniform float u_aspect;
@@ -150,9 +137,8 @@ void main() {
 
 	gl_FragColor = vec4(color + vec3(val / 20.), alpha);
 }
-</script>
-
-<script type="x-shader/x-vertex" id="vertex">
+        </script>
+        <script type="x-shader/x-vertex" id="vertex">
     varying vec2 vUv;
  uniform float u_time;
     uniform float u_noiseFreq;
@@ -263,11 +249,10 @@ vec4 taylorInvSqrt(vec4 r)
 
    gl_Position = projectionMatrix * modelViewMatrix * vec4(pos, 1.0 );
  }
-</script>
-<!-- partial -->
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r122/three.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.7/dat.gui.min.js'></script><script src="scripts/script.js"></script>
-
+        </script>
+        <!-- partial -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r122/three.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.7/dat.gui.min.js"></script>
+        <script src="scripts/script.js"></script>
     </body>
-
 </html>
