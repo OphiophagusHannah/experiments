@@ -1,9 +1,7 @@
-
-
 var svg = document.querySelector('#rect');
 var rect = svg.removeChild(svg.querySelector('rect'));
 
-var prev = function (n, a) {
+var preview = function (n, a) {
     var max = Math.sqrt(n) * Math.sqrt(a);
     return [max, n / max].map(Math.round);
 };
@@ -15,7 +13,7 @@ window.addEventListener('mousemove', (event) => {
     mousePos = { x: event.clientX, y: event.clientY };
     // mousePosText.textContent = `(${mousePos.x}, ${mousePos.y})`;
 
-    var grid = prev(parseInt(mousePos.y, 20), innerWidth / innerHeight);
+    var grid = preview(parseInt(mousePos.y, 20), innerWidth / innerHeight);
     svg.innerHTML = '';
     svg.setAttribute('viewBox', `0 0 ${grid[0]} ${grid[1]}`);
 

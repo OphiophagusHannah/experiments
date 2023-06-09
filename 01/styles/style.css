@@ -1,16 +1,16 @@
-@charset "UTF-8";
-body {
+* {
   margin: 0;
-  overflow: hidden;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
   width: 100%;
-   background: rgb(136, 37, 136);
 }
 
 canvas {
-  position: absolute;
-  top: 0;
-  left: 0;
-  background: radial-gradient(circle, darkslateblue, mediumturquoise) !important;
+  position: relative;
   width: 100%;
   height: 100%;
 }/*# sourceMappingURL=style.css.map */

@@ -1,43 +1,16 @@
+@charset "UTF-8";
 body {
   margin: 0;
-  padding: 0;
   overflow: hidden;
-  background: #303136;
-  position: relative;
+  width: 100%;
+   background: rgb(136, 37, 136);
 }
 
 canvas {
-  display: block;
-  width: 100vw;
-  height: 100vh;
-}
-
-#destroy {
   position: absolute;
-  z-index: 10;
-  left: 33%;
-  top: 38vh;
-  background: rgba(0, 0, 0, 0.9);
-  color: white;
-  font-size: 2rem;
-  padding: 5rem;
-  text-transform: uppercase;
-  letter-spacing: 7px;
-  font-family: helvetica;
-  cursor: pointer;
-}
-
-.invisible {
-  display: none;
-}
-
-#img {
-  position: absolute;
+  top: 0;
+  left: 0;
+  background: radial-gradient(circle, darkslateblue, mediumturquoise) !important;
   width: 100%;
-  height: auto;
-}
-
-.img {
-  position: absolute;
-  visibility: hidden;
+  height: 100%;
 }/*# sourceMappingURL=style.css.map */

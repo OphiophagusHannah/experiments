@@ -1,222 +1,48 @@
-document.getElementById("destroy").addEventListener("click", function() {
+var c = document.getElementById('canv');
+var $ = c.getContext('2d');
+var w = c.width = 750;
+var h = c.height = 750;
+var position = [w / 2, h / 2];
+var spacing = 20;
+var numw = w / spacing;
+var numh = h / spacing;
 
-
-    document.getElementById("img").classList.add("img");
-      document.getElementById("destroy").classList.add("invisible");
-    /*   PIXI 5 Setup  */
-    const app = new PIXI.Application({
-        width: window.innerWidth,
-        height: window.innerHeight,
-        antialias: true,
-        transparent: false,
-        backgroundColor: 0x303030,
-        resolution: window.devicePixelRatio || 1,
-        autoDensity: true,
-    });
-    document.body.appendChild(app.view);
-
-
-    let scene_Width = 1680;
-    let scene_Height = 905;
-    let element_width = app.screen.width /70 -3;
-    let speed = 0.5;
-    let time;
-
-
-    const scene = new PIXI.Container();
-    app.stage.addChild(scene);
-
-    const bg_stage = new PIXI.Container();
-    app.stage.addChild(bg_stage);
-    bg_stage.visible = false;
-
-    const imageBg = PIXI.Sprite.from(document.getElementById("img"))
-    imageBg.width = app.screen.width;
-    imageBg.height = app.screen.height;
-    bg_stage.addChild(imageBg);
-
-    let displacementSprite = PIXI.Sprite.from("https://cdnb.artstation.com/p/assets/images/images/044/101/691/large/hannah-avgust-mushroom-final-print-update.jpg?1639081000");
-    // displacementSprite.anchor.set(0.5)
-    displacementSprite.texture.baseTexture.wrapMode = PIXI.WRAP_MODES.REPEAT;
-    bg_stage.addChild(displacementSprite);
-
-    const displacementFilter = new PIXI.filters.DisplacementFilter(displacementSprite);
-    displacementFilter.scale.x = 10;
-    displacementFilter.scale.y = 10;
-    imageBg.filters = [displacementFilter];
-
-
-
-    // Get color from certain pixel in image (using Canvas API)
-    const image = new Image();
-    image.crossOrigin = "Anonymous";
-    image.src = "https://cdnb.artstation.com/p/assets/images/images/044/101/691/large/hannah-avgust-mushroom-final-print-update.jpg?1639081000";
-    image.onload = function () {
-        const canvas2 = document.createElement("canvas");
-        canvas2.width = app.screen.width;
-        canvas2.height =  app.screen.height;
-        const context = canvas2.getContext("2d");
-        context.drawImage(image, 0, 0,  app.screen.width, app.screen.height);
-
-        for (y = 0; y < app.screen.height; y += app.screen.width/70 ) {
-            for (x = 0; x < app.screen.width; x += app.screen.width/70) {
-                let data = canvas2.getContext(("2d")).getImageData(x, y, 1, 1).data;
-                hex = rgbToHex(data[0], data[1], data[2]);
-
-                //make circle from every listed pixel
-                let circle = new PIXI.Graphics();
-                circle.beginFill(hex);
-                // circle.drawCircle(0, 0, element_width/1.5)
-                circle.drawRect(-8, -8, element_width, element_width )
-                circle.endFill();
-                circle.x = x;
-                circle.y = y;
-                scene.addChild(circle);
-                circle.interactive = true;
-                circle.buttonMode = true;
-                circle.on('pointerdown', clickFx);
-                circle.on('mouseover', hoverFx);
-            }
-        }
-        scene.x = 0;  //fix
-
-        autoAnimation()
-    }
-
-
-    function autoAnimation() {
-    //     time = new Date();
-
-    //     if (animationAuto.isActive()) animationAuto.seek(3);
-
-    //     let currentCircle = scene.children[gsap.utils.random(100, scene.children.length, 5)];
-    //     currentCircle.interactive = false;
-
-    //     //activate ticker for Displacement Filter
-    //     tickerDisplacement.start();
-    //     displacementFilter.scale.x = 5;
-    //     displacementFilter.scale.y = 5;
-    //     speed = 0.5;
-
-    //     //apply mask
-    //     bg_stage.visible = true;
-    //     imageBg.mask = currentCircle;
-
-    //     animationAuto = gsap.to(currentCircle, { width: 200, height: 200, duration: 1.5, repeat: 1, yoyo: true, ease: "power2.out", onComplete: autoAnimation })
-    }
-
-
-    function clickFx() {
-
-        // if (animationClick.isActive()) {
-        //     animationClick.seek(105);
-        //     clickStop(this)
-        // }
-
-        // if (animationAuto.isActive())  animationAuto.seek(3);
-
-      animationClick.seek(105);
-
-      animationClick.seek(105);
-
-        this.interactive = false;
-        tickerDisplacement.start()
-        bg_stage.visible = true;
-        imageBg.mask = this;
-
-        animationClick = gsap.fromTo(this, { width: element_width, left: 0, right: 0, height: element_width }, { width: 200, height: 200,left: -10, right: -10, radius: 150, duration: 1.5, repeat: 1, yoyo: true, onComplete: clickStop, onCompleteParams: [this] })
+var draw = function(p){
+  $.fillStyle = "hsla(38,5%,12%,.90)";
+  $.fillRect(0, 0, w, h);
+  $.fillStyle = "rgb(136, 37, 136)";
+  $.strokeStyle = "rgb(136, 37, 136)";
+  for (var i = 0; i < numh; i++)
+    for (var j = 0; j < numw; j++) {
+      var diagnalW = j * spacing +
+          (i % 2 ? 0 : spacing/ 2);
+      var diagnalH = i * spacing;
+      var arr = [position[0] - diagnalW,
+                 position[1] - diagnalH],
+          wave = Math.sqrt(arr[0] * arr[1] +
+                           arr[0] * arr[0]),
+          arr = [arr[0] / wave, arr[1] / wave],
+          angle = 50*(Math.cos(p/360 - wave / 105) - 1);
+      $.beginPath();
+      $.arc(diagnalW+ arr[0] * angle, diagnalH +
+            arr[1] * angle, 2.8, 0, 2 * Math.PI, false);
+      $.closePath();
+      $.fill()
+      for (var n = 0; n < 5; n++) {
+        var tail = 50 * (Math.cos((p - 50 * n) /
+                   360 - wave / 105) - 1);
+        $.beginPath();
+        $.moveTo(diagnalW + arr[0] * angle, diagnalH + arr[1] * angle);
+        $.lineWidth = 5 - n;
+        $.lineTo(diagnalW + arr[0] * tail, diagnalH + arr[1] * tail);
+        $.stroke()
+      }
 
     }
 
-
-    function clickStop(el) {
-        el.interactive = true;
-        tickerDisplacement.stop();
-
-        //Resetting Values
-          displacementFilter.scale.x = 90;
-        displacementFilter.scale.y = 90;
-        displacementFilter.scale.x = 10;
-        displacementFilter.scale.y = 10;
-      speed = 100;
-        speed = 0.5;
-
-        time = new Date();
-    }
-
-
-    function hoverFx() {
-        animationHover = gsap.fromTo(this, { width: element_width, height: element_width }, { width: element_width + 10, height: element_width + 10, duration: 0.5, repeat: 1, yoyo: true })
-
-
-
-    //   animationHover = gsap.fromTo(this, { opacity: 1 }, { opacity: .1, duration: 0.5, repeat: 1, yoyo: true })
-    }
-
-
-    //Ticker for Displacement Filter
-    var tickerDisplacement = new PIXI.Ticker();
-    tickerDisplacement.add(displacementFx);
-    function displacementFx() {
-        displacementSprite.x += speed;
-        displacementSprite.y += speed;
-        displacementFilter.scale.x += 0.5;
-        displacementFilter.scale.y += 0.5;
-    }
-
-
-    app.ticker.add(function () {
-        if (new Date() - time > 4100) autoAnimation();
-    })
-
-
-    //Fix - empty animation
-    let animationClick = gsap.to(this, {  })
-    let animationAuto = gsap.to(this, {  })
-    let animationHover = gsap.to(this, {  })
-
-
-    // functions to convert color format
-    function rgbToHex(r, g, b) {
-        return "0x" + componentToHex(r) + componentToHex(g) + componentToHex(b);
-    }
-    function componentToHex(c) {
-        var hex = c.toString(16);
-        return hex.length == 1 ? "0" + hex : hex;
-    }
-
-
-    /*   PIXI content Resize  */
-    window.addEventListener('resize', resizeFx);
-    function resizeFx() {
-        app.renderer.resize(window.innerWidth, window.innerHeight);
-        sceneResize()
-    }
-    resizeFx();
-
-    function sceneResize() {
-        var new_width = app.screen.width;
-        var new_height = app.screen.height;
-
-        var ratio = scene.width / scene.height;
-        var newRatio = new_width / new_height;
-
-        //Landscape mode
-        if (newRatio > ratio) {
-            scene.height = scene.height / (scene.width / new_width);
-            scene.width = new_width;
-            scene.position.x = 0;
-            scene.position.y = (new_height - scene.height) / 2;
-
-        //Portrait mode
-        } else {
-            scene.width = scene.width / (scene.height / new_height);
-            scene.height = new_height;
-            scene.position.y = 0;
-            scene.position.x = (new_width - scene.width) / 2;
-        }
-
-        imageBg.width = app.screen.width;
-        imageBg.height = app.screen.height;
-    }
-    });
+};
+var anim = function(p){
+  window.requestAnimationFrame(anim);
+  draw(p);
+};
+anim();
