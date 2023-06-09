@@ -35,7 +35,7 @@ document.getElementById("destroy").addEventListener("click", function () {
     imageBg.height = app.screen.height;
     bg_stage.addChild(imageBg);
 
-    let displacementSprite = PIXI.Sprite.from("https://cdnb.artstation.com/p/assets/images/images/044/101/691/large/hannah-avgust-mushroom-final-print-update.jpg?1639081000");
+    let displacementSprite = PIXI.Sprite.from("https://experiments-sketches.vercel.app/00/hannah-avgust-mushroom-peekaboo.jpg");
     // displacementSprite.anchor.set(0.5)
     displacementSprite.texture.baseTexture.wrapMode = PIXI.WRAP_MODES.REPEAT;
     bg_stage.addChild(displacementSprite);
@@ -50,7 +50,7 @@ document.getElementById("destroy").addEventListener("click", function () {
     // Get color from certain pixel in image (using Canvas API)
     const image = new Image();
     image.crossOrigin = "Anonymous";
-    image.src = "https://cdnb.artstation.com/p/assets/images/images/044/101/691/large/hannah-avgust-mushroom-final-print-update.jpg?1639081000";
+    image.src = "https://experiments-sketches.vercel.app/00/hannah-avgust-mushroom-peekaboo.jpg";
     image.onload = function () {
         const canvas2 = document.createElement("canvas");
         canvas2.width = app.screen.width;
