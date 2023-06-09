@@ -1,6 +1,4 @@
 document.getElementById("destroy").addEventListener("click", function () {
-
-
     document.getElementById("img").classList.add("img");
     document.getElementById("background").classList.add("invisible");
     /*   PIXI 5 Setup  */
@@ -16,9 +14,9 @@ document.getElementById("destroy").addEventListener("click", function () {
     document.body.appendChild(app.view);
 
 
-    let scene_Width = 1680;
-    let scene_Height = 905;
-    let element_width = app.screen.width / 70 - 3;
+    // let scene_Width = 1680;
+    // let scene_Height = 905;
+    let element_width = app.screen.width / 70 - 8;
     let speed = 0.5;
     let time;
 
@@ -35,7 +33,7 @@ document.getElementById("destroy").addEventListener("click", function () {
     imageBg.height = app.screen.height;
     bg_stage.addChild(imageBg);
 
-    let displacementSprite = PIXI.Sprite.from("https://experiments-sketches.vercel.app/00/hannah-avgust-mushroom-peekaboo.jpg");
+    let displacementSprite = PIXI.Sprite.from("https://www.onlygfx.com/wp-content/uploads/2017/07/paint-texture-black-and-white-1.jpeg");
     // displacementSprite.anchor.set(0.5)
     displacementSprite.texture.baseTexture.wrapMode = PIXI.WRAP_MODES.REPEAT;
     bg_stage.addChild(displacementSprite);
@@ -44,7 +42,6 @@ document.getElementById("destroy").addEventListener("click", function () {
     displacementFilter.scale.x = 10;
     displacementFilter.scale.y = 10;
     imageBg.filters = [displacementFilter];
-
 
 
     // Get color from certain pixel in image (using Canvas API)
@@ -84,41 +81,9 @@ document.getElementById("destroy").addEventListener("click", function () {
     }
 
 
-    function autoAnimation() {
-        //     time = new Date();
-
-        //     if (animationAuto.isActive()) animationAuto.seek(3);
-
-        //     let currentCircle = scene.children[gsap.utils.random(100, scene.children.length, 5)];
-        //     currentCircle.interactive = false;
-
-        //     //activate ticker for Displacement Filter
-        //     tickerDisplacement.start();
-        //     displacementFilter.scale.x = 5;
-        //     displacementFilter.scale.y = 5;
-        //     speed = 0.5;
-
-        //     //apply mask
-        //     bg_stage.visible = true;
-        //     imageBg.mask = currentCircle;
-
-        //     animationAuto = gsap.to(currentCircle, { width: 200, height: 200, duration: 1.5, repeat: 1, yoyo: true, ease: "power2.out", onComplete: autoAnimation })
-    }
-
-
     function clickFx() {
 
-        // if (animationClick.isActive()) {
-        //     animationClick.seek(105);
-        //     clickStop(this)
-        // }
-
-        // if (animationAuto.isActive())  animationAuto.seek(3);
-
         animationClick.seek(105);
-
-        animationClick.seek(105);
-
         this.interactive = false;
         tickerDisplacement.start()
         bg_stage.visible = true;
@@ -147,12 +112,7 @@ document.getElementById("destroy").addEventListener("click", function () {
 
     function hoverFx() {
         animationHover = gsap.fromTo(this, { width: element_width, height: element_width }, { width: element_width + 10, height: element_width + 10, duration: 0.5, repeat: 1, yoyo: true })
-
-
-
-        //   animationHover = gsap.fromTo(this, { opacity: 1 }, { opacity: .1, duration: 0.5, repeat: 1, yoyo: true })
     }
-
 
     //Ticker for Displacement Filter
     var tickerDisplacement = new PIXI.Ticker();
@@ -164,11 +124,9 @@ document.getElementById("destroy").addEventListener("click", function () {
         displacementFilter.scale.y += 0.5;
     }
 
-
     app.ticker.add(function () {
         if (new Date() - time > 4100) autoAnimation();
     })
-
 
     //Fix - empty animation
     let animationClick = gsap.to(this, {})

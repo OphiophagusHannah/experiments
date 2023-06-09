@@ -44,7 +44,7 @@ canvas {
   display: flex;
   justify-content: center;
   color: rgba(254, 255, 246, 0.784);
-  background: rgba(0, 15, 21, 0.9);
+  background: rgba(13, 0, 21, 0.9);
   font-size: 2rem;
   padding: 3rem 3rem;
   text-transform: uppercase;
@@ -188,4 +188,9 @@ canvas {
 
 .invisible {
   display: none !important;
+}
+
+.img {
+  width: 1000px;
+  height: 700px;
 }/*# sourceMappingURL=style.css.map */

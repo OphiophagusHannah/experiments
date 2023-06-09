@@ -13,17 +13,22 @@ iframe {
     z-index: 10;
     top: 30%;
     color: white;
-    width: 54%;
-    // height: 100%;
     display: flex;
     justify-content: center;
     align-self: center;
-    margin-left: 3rem;
+    margin-left: 1.5rem;
+    @media only screen and (min-width: 700px) {
+      margin-left: 3rem;
+    }
     margin-right: auto;
     text-align: left;
     flex-direction: column;
     font-family: Roboto;
     font-weight: 300;
+    @media only screen and (min-width: 700px) {
+      width: 54%;
+      top: 30%;
+    }
     span {
       font-weight: 400;
     }
@@ -31,7 +36,10 @@ iframe {
     h1 {
       margin-top: -5rem;
       margin-left: -5px;
-      font-size: 80px;
+      font-size: 40px;
+      @media only screen and (min-width: 700px) {
+        font-size: 80px;
+      }
       text-transform: uppercase;
       margin-bottom: 0px;
       letter-spacing: 0.15rem;

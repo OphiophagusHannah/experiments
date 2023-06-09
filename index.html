@@ -8,107 +8,147 @@
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <link rel="stylesheet" href="styles/style.css">
     </head>
-    <body class="home-class">
+    <body>
         <section class="display ">
             <div id="content_info" style="border-left-color: rgb(153, 153, 153);">
-                <div class="header home-page">
-                    <a
-                        href=""
-                        class="home-link trigger current"
-                        data-id=""
-                        ata-name="Description 00"
-                        data-title=""
-                        data-tools=""
-                        data-color="color: rgb(60, 179, 113)"
-                    >
-                        <h1 class="home-trigger">
-                            <div class="animated-circle-text">
-                                <svg viewBox="0 0 244.1 244.1">
-                                    <path id="circlePath" d="M226.6,122.1c0,57.7-46.8,104.5-104.5,104.5S17.6,179.8,17.6,122.1S64.4,17.6,122.1,17.6
+                <div class="nav-wrapper">
+                    <div class="header">
+                        <a
+                            href=""
+                            class="home-link trigger current"
+                            data-id="home"
+                            ata-name="Description 00"
+                            data-title=""
+                            data-tools=""
+                            data-color="color: rgb(60, 179, 113)"
+                        >
+                            <h1 class="home-trigger">
+                                <div class="animated-circle-text">
+                                    <svg viewBox="0 0 244.1 244.1">
+                                        <path id="circlePath" d="M226.6,122.1c0,57.7-46.8,104.5-104.5,104.5S17.6,179.8,17.6,122.1S64.4,17.6,122.1,17.6
         S226.6,64.4,226.6,122.1z" fill="transparent"/>
-                                    <text>
-                                        <textPath xlink:href="#circlePath">
-                                            - Hanna August - experiments
-                                        </textPath>
-                                    </text>
-                                </svg>
-                            </div>
-                        </h1>
-                    </a>
-                </div>
-                <nav>
+                                        <text>
+                                            <textPath xlink:href="#circlePath">
+                                                - Hanna August - experiments
+                                            </textPath>
+                                        </text>
+                                    </svg>
+                                </div>
+                            </h1>
+                        </a>
+                    </div>
                     <h3 id="current-name" style=""></h3>
                     <p id="current-title" style=""></p>
                     <p id="current-tools" style=""></p>
-                    <div class="menu-title">
-                        <!-- <div class="prev"><<</div> -->
-                        <div class="menu-description">
-                            <ul id="menu-dots">
-                                <a
-                                    href="#00"
+                </div>
+                <div class="nav--list-wrapper">
+                    <nav>
+                        <div class="menu-title">
+                            <!-- <div class="prev"><<</div> -->
+                            <div class="menu-description">
+                                <ul id="menu-dots">
+                                    <a
+                                        href="#00"
+                                        class="trigger"
+                                        data-id="00"
+                                        data-name="Peekaboo"
+                                        data-tools=""
+                                        data-title="This experiment is a part of my learning on how to destroy my own art with code and effects."
+                                        data-color="color: rgb(60, 179, 113)"
+                                    >
+                                        00
+                                        <span style="background: rgba(175, 240, 255, 0.9)"></span>
+                                    </a>
+                                    <a
+                                        href="#01"
+                                        class="trigger"
+                                        data-id="01"
+                                        data-name="Description 01"
+                                        data-tools=""
+                                        data-title="Description 01. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse tellus nibh, maximus sit amet nunc sed, molestie convallis nulla. "
+                                        data-color="color: rgb(170, 170, 170);"
+                                    >
+                                        01
+                                        <span style="background: rgb(170, 170, 170)"></span>
+                                    </a>
+                                    <a
+                                        href="#02"
+                                        class="trigger"
+                                        data-id="02"
+                                        data-name="Description 02"
+                                        data-tools=""
+                                        data-title="Description 02. Suspendisse tellus nibh, maximus sit amet nunc sed, molestie convallis nulla. Ut ut dignissim velit, ac pellentesque mi."
+                                        data-color="color: rgb(106, 90, 205)"
+                                    >
+                                        02
+                                        <span style="background: rgb(106, 90, 205)"></span>
+                                    </a>
+                                    <a
+                                        href="#03"
+                                        class="trigger"
+                                        data-id="03"
+                                        data-name="Description 03"
+                                        data-tools=""
+                                        data-title="Description 02. Suspendisse tellus nibh, maximus sit amet nunc sed, molestie convallis nulla. Ut ut dignissim velit, ac pellentesque mi."
+                                        data-color="color: rgb(106, 90, 205)"
+                                    >
+                                        03
+                                        <span style="background: rgb(106, 90, 205)"></span>
+                                    </a>
+                                    <a
+                                        href="#04"
+                                        class="trigger"
+                                        data-id="04"
+                                        data-name="Description 04"
+                                        data-tools=""
+                                        data-title="Description 02. Suspendisse tellus nibh, maximus sit amet nunc sed, molestie convallis nulla. Ut ut dignissim velit, ac pellentesque mi."
+                                        data-color="color: rgb(106, 90, 205)"
+                                    >
+                                        04
+                                        <span style="background: rgb(106, 90, 205)"></span>
+                                    </a>
+                                    <a
+                                        href="#05"
+                                        class="trigger"
+                                        data-id="05"
+                                        data-name="Description 05"
+                                        data-tools=""
+                                        data-title="Description 02. Suspendisse tellus nibh, maximus sit amet nunc sed, molestie convallis nulla. Ut ut dignissim velit, ac pellentesque mi."
+                                        data-color="color: rgb(106, 90, 205)"
+                                    >
+                                        05
+                                        <span style="background: rgb(106, 90, 205)"></span>
+                                    </a>
+                                    <!-- <a
+                                    href="#06"
                                     class="trigger"
-                                    data-id="00"
-                                    data-name="Peekaboo"
+                                    data-id="06"
+                                    data-name="Description 06"
                                     data-tools=""
-                                    data-title="This experiment is a part of my learning on how to destroy my own art with code and effects."
-                                    data-color="color: rgb(60, 179, 113)"
-                                >
-                                    00
-                                    <span style="background: rgba(175, 240, 255, 0.9)"></span>
-                                </a>
-                                <a
-                                    href="#01"
-                                    class="trigger"
-                                    data-id="01"
-                                    data-name="Description 01"
-                                    data-tools=""
-                                    data-title="Description 01. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse tellus nibh, maximus sit amet nunc sed, molestie convallis nulla. "
-                                    data-color="color: rgb(170, 170, 170);"
-                                >
-                                    01
-                                    <span style="background: rgb(170, 170, 170)"></span>
-                                </a>
-                                <a
-                                    href="#02"
-                                    class="trigger"
-                                    data-id="02"
-                                    data-name="Description 02"
-                                    data-tools=""
-                                    data-title="Description 02. Suspendisse tellus nibh, maximus sit amet nunc sed, molestie convallis nulla. Ut ut dignissim velit, ac pellentesque mi."
+                                    data-title="Description 06. Suspendisse tellus nibh, maximus sit amet nunc sed, molestie convallis nulla. Ut ut dignissim velit, ac pellentesque mi."
                                     data-color="color: rgb(106, 90, 205)"
                                 >
-                                    02
+                                    06
                                     <span style="background: rgb(106, 90, 205)"></span>
                                 </a>
                                 <a
-                                    href="#03"
+                                    href="#07"
                                     class="trigger"
-                                    data-id="03"
-                                    data-name="Description 03"
+                                    data-id="07"
+                                    data-name="Description 07"
                                     data-tools=""
-                                    data-title="Description 02. Suspendisse tellus nibh, maximus sit amet nunc sed, molestie convallis nulla. Ut ut dignissim velit, ac pellentesque mi."
+                                    data-title="Description 07. Suspendisse tellus nibh, maximus sit amet nunc sed, molestie convallis nulla. Ut ut dignissim velit, ac pellentesque mi."
                                     data-color="color: rgb(106, 90, 205)"
                                 >
-                                    03
+                                    07
                                     <span style="background: rgb(106, 90, 205)"></span>
-                                </a>
-                                <a
-                                    href="#04"
-                                    class="trigger"
-                                    data-id="04"
-                                    data-name="Description 04"
-                                    data-tools=""
-                                    data-title="Description 02. Suspendisse tellus nibh, maximus sit amet nunc sed, molestie convallis nulla. Ut ut dignissim velit, ac pellentesque mi."
-                                    data-color="color: rgb(106, 90, 205)"
-                                >
-                                    04
-                                    <span style="background: rgb(106, 90, 205)"></span>
-                                </a>
-                            </ul>
+                                </a> -->
+                                </ul>
+                            </div>
+                            <!-- <div class="next">>></div> -->
                         </div>
-                        <!-- <div class="next">>></div> -->
-                    </div>
-                </nav>
+                    </nav>
+                </div>
                 <section></section>
             </div>
             <div id="content">

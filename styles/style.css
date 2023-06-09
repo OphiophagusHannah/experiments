@@ -54,6 +54,11 @@ h1 {
   padding-left: 0;
   margin-top: 0;
 }
+@media only screen and (max-width: 700px) {
+  #menu-dots {
+    margin-bottom: 0;
+  }
+}
 #menu-dots a {
   margin-right: 0.7rem;
   font-size: 2rem;
@@ -132,10 +137,36 @@ h1 {
 
 #content_info {
   position: absolute;
-  top: 3rem;
-  left: 3rem;
+  top: 0;
+  left: 0;
   height: 2rem;
   z-index: 5;
+}
+#content_info .nav-wrapper {
+  padding: 1.5rem;
+  transition: 0.2s linear;
+}
+@media only screen and (min-width: 700px) {
+  #content_info .nav-wrapper {
+    padding: 3rem;
+  }
+}
+#content_info .nav--list-wrapper {
+  padding: 1.5rem;
+}
+@media only screen and (min-width: 700px) {
+  #content_info .nav--list-wrapper {
+    padding: 3rem;
+  }
+}
+
+.not-home .nav-wrapper {
+  padding: 3rem;
+  transition: 0.2s linear;
+}
+.not-home .nav-wrapper:hover {
+  background: rgba(15, 15, 15, 0.8862745098);
+  transition: 0.2s linear;
 }
 
 #content iframe {

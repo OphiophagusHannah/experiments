@@ -8,16 +8,26 @@
   z-index: 10;
   top: 30%;
   color: white;
-  width: 54%;
   display: flex;
   justify-content: center;
   align-self: center;
-  margin-left: 3rem;
+  margin-left: 1.5rem;
   margin-right: auto;
   text-align: left;
   flex-direction: column;
   font-family: Roboto;
   font-weight: 300;
+}
+@media only screen and (min-width: 700px) {
+  .home-page .home-info {
+    margin-left: 3rem;
+  }
+}
+@media only screen and (min-width: 700px) {
+  .home-page .home-info {
+    width: 54%;
+    top: 30%;
+  }
 }
 .home-page .home-info span {
   font-weight: 400;
@@ -25,7 +35,7 @@
 .home-page .home-info h1 {
   margin-top: -5rem;
   margin-left: -5px;
-  font-size: 80px;
+  font-size: 40px;
   text-transform: uppercase;
   margin-bottom: 0px;
   letter-spacing: 0.15rem;
@@ -37,6 +47,11 @@
   text-fill-color: transparent;
   font-weight: 100;
   font-weight: 300;
+}
+@media only screen and (min-width: 700px) {
+  .home-page .home-info h1 {
+    font-size: 80px;
+  }
 }
 .home-page .home-info p {
   line-height: 1.5;

@@ -8,12 +8,14 @@ if (hash) {
     var title = initId.attr('data-title');
     var name = initId.attr('data-name');
     var tools = initId.attr('tools');
+    var id = initId.attr('data-id');
     $('#content iframe').attr('src', './' + newStr + '/index.html');
     $('.trigger').removeClass('current');
     initId.addClass('current');
     $('#current-title').html(title);
     $('#current-name').html(name);
     $('#current-tools').html(tools);
+    $('body').attr('class', '' + id + '');
 }
 
 $('.trigger').click(function () {
@@ -28,6 +30,7 @@ $('.trigger').click(function () {
     // $('#current-title').attr('style', data_color);
     $('.trigger').removeClass('current');
     $(this).addClass('current');
+    $('body').attr('class', 'not-home ' + id + '');
 });
 
 
